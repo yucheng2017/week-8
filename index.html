@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" id="key-a" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" id="key-s" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" id="key-d" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" id="key-f" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" id="key-g" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" id="key-h" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" id="key-j" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" id="key-k" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" id="key-l" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" id="audio-a" src="sounds/clap.wav"></audio>
+  <audio data-key="83" id="audio-s" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" id="audio-d" src="sounds/kick.wav"></audio>
+  <audio data-key="70" id="audio-f" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" id="audio-g" src="sounds/boom.wav"></audio>
+  <audio data-key="72" id="audio-h" src="sounds/ride.wav"></audio>
+  <audio data-key="74" id="audio-j" src="sounds/snare.wav"></audio>
+  <audio data-key="75" id="audio-k" src="sounds/tom.wav"></audio>
+  <audio data-key="76" id="audio-l" src="sounds/tink.wav"></audio>
+
+<script>
+window.addEventListener ("keydown", function(e){console.log ("a key has been pressed",e["keyCode"])
+ if (e["keyCode"]==65) {var audio=document.getElementById("audio-a"); audio.play();
+ var key=document.getElementById("key-a"); key.classList.add("playing");
+}
+});
+ function removeTransition(e) {
+    if (e.propertyName !== "transform") return;
+    // console.log(e.propertyName);
+    this.classList.remove("playing");
+  }
+
+var keyA = document.getElementById("key-a");
+  keyA.addEventListener("transitionend", removeTransition);
+
+
+window.addEventListener("keydown", function(e) {
+    console.log(e.keyCode);
+    if (e.keyCode == 83) {
+      var audio = document.getElementById("audio-s");
+      if (!audio) return;
+
+
+      var key = document.getElementById("key-s");
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add("playing");
+    }
+  });
+
+  function removeTransition(e) {
+    if (e.propertyName !== "transform") return;
+    // console.log(e.propertyName);
+    this.classList.remove("playing");
+  }
+
+  var keyS = document.getElementById("key-s");
+  keyS.addEventListener("transitionend", removeTransition);
+
+window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==68) {
+   var audio=document.getElementById("audio-d"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-d"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyD = document.getElementById("key-d");
+  keyD.addEventListener("transitionend", removeTransition); 
+
+window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==70) {
+   var audio=document.getElementById("audio-f"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-f"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyF = document.getElementById("key-f");
+  keyF.addEventListener("transitionend", removeTransition);
+
+  window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==71) {
+   var audio=document.getElementById("audio-g"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-g"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyG = document.getElementById("key-g");
+  keyG.addEventListener("transitionend", removeTransition);
+
+    window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==72) {
+   var audio=document.getElementById("audio-h"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-h"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyH = document.getElementById("key-h");
+  keyH.addEventListener("transitionend", removeTransition);
+
+  window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==74) {
+   var audio=document.getElementById("audio-j"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-j"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyJ = document.getElementById("key-j");
+  keyJ.addEventListener("transitionend", removeTransition);
+
+  window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==75) {
+   var audio=document.getElementById("audio-k"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-k"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyK = document.getElementById("key-k");
+  keyK.addEventListener("transitionend", removeTransition);
+
+  window.addEventListener("keydown", function(e)
+  {console.log(e.keyCode);
+  if (e.keyCode ==76) {
+   var audio=document.getElementById("audio-l"); 
+   if (!audio) return;
+  
+   var key=document.getElementById("key-l"); 
+   audio.currentTime=0;
+   audio.play();
+   key.classList.add("playing");
+  }
+});
+
+function removeTransition(e){
+  if(e.propertyName!=="transform")return;
+//console.log(e.propertyName);
+this.classList.remove("playing");}
+
+ var keyL = document.getElementById("key-l");
+  keyL.addEventListener("transitionend", removeTransition);
+</script>
+
+
+</body>
+</html>
